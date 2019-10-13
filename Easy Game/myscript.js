@@ -1,7 +1,10 @@
+var result;
+
+$(document).ready(give_a_number());
+
 function give_a_number(){
-    var result = Math.floor(Math.random() * 100);
+    result = Math.round(Math.random() * 100);
     console.info(result);
-    return result;
 }
 
 function ask_for_a_number (){
@@ -9,7 +12,8 @@ function ask_for_a_number (){
 }
 
 function compare_numbers(){
-    var x = give_a_number();
+    console.info(result);
+    var x = result;
     var y = ask_for_a_number();
     if( y > 100 || y < 0 ){
         alert("The Number is between 0-100")
