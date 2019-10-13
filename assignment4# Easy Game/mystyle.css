@@ -1,0 +1,23 @@
+body {
+    color: rgb(92, 13, 13);
+    background-color: #8ae7d8;
+    font-family: Georgia, "Times New Roman",Times, serif;
+
+    }
+h1 {
+   font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif;
+}
+address {
+   margin-top: 3em;
+   padding-top: 1em;
+   border-top: solid;
+}
+#demo {
+    margin-top: 1em;
+    font-size:25px;
+    border-style: solid;
+    border-radius: 5px;
+    max-width: 30em;
+    height: 1.7em;
+    text-align: center;
+}
