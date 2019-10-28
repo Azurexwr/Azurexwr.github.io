@@ -38,7 +38,7 @@ $(document).ready(function(){
                        items.push(value.fields.film_awards_name);
                        dataSet.push(items);
                        console.log(items);
-                }); // end .each
+                }); 
                 console.log(dataSet);
 
              $('#table1').DataTable( {
@@ -73,7 +73,7 @@ $(document).ready(function(){
                        defaultContent:""} ,
                  ]
              } );
-        }); // end .getJSON
-     }); // end button
+        });
+     }); 
 
-}); // document ready
+}); 
