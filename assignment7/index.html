@@ -37,47 +37,48 @@
         </div><!-- end col -->
     </div><!--end row -->
   </div><!-- container -->
+  
   <script>
-        var mapboxTiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: 'Map data &copy; <a href="https://openstreetmap.org">OpenStreetMap</a>', maxZoom: 18,});
-    
-        var map = L.map('map')
-              .addLayer(mapboxTiles)
-              .setView([22.287111, 114.191667], 13);
-    
-    
-        var items = [];
-        var airtable_read_endpoint = "https://api.airtable.com/v0/appu5yU2yNyYArUOD/%E6%8B%8D%E6%94%9D%E5%A0%B4%E5%9C%B0%E8%A8%8A%E6%81%AFFilming%20Location%20Info?api_key=keymD6h94v04C3JPF";
-    
-        var data = [];
-        $.getJSON(airtable_read_endpoint, function(result) {
-               $.each(result.records, function(key,value) {
-                   items = {};
+    var mapboxTiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: 'Map data &copy; <a href="https://openstreetmap.org">OpenStreetMap</a>', maxZoom: 18,});
+
+    var map = L.map('map')
+          .addLayer(mapboxTiles)
+          .setView([22.287111, 114.191667], 13);
+
+
+    var items = [];
+    var airtable_read_endpoint = "https://api.airtable.com/v0/appu5yU2yNyYArUOD/%E6%8B%8D%E6%94%9D%E5%A0%B4%E5%9C%B0%E8%A8%8A%E6%81%AFFilming%20Location%20Info?api_key=keymD6h94v04C3JPF";
+
+    var data = [];
+    $.getJSON(airtable_read_endpoint, function(result) {
+           $.each(result.records, function(key,value) {
+               items = {};
                    items["name"] = value.fields.拍攝場地FilmingSite;
                    items["url"] = value.fields.地址Address;
-                   items["image_url"] = value.fields.PicURL;
+                   items["image_url"] = value.fields.img_url;
                    items["latitud"] = value.fields.緯度Latitude;
-                   items["longitud"] = value.fields.緯度Latitude;
-                       data.push(items);
-                       console.log(items);
-                }); // end .each
-        }); // end getJSON
-      </script>
-    
-      <script>
-        function show_districts(){
-    
-          for (var i in data) {
-              var latlng = L.latLng({ lat: data[i].latitud, lng: data[i].longitud });
-              L.marker( latlng )
-                  .bindPopup( '<a href="' + data[i].url + '" target="_blank">' + '<img src="' + data[i].image_url+'" width = "80px"><br>'+data[i].name + '</a>' )
-                  .addTo(map);
-          }
-    
-        }
-    
-      </script>
-    
-      <script src='scriptlib2.js'></script>
-    </body>
-    </html>
-    </html>
+                   items["longitud"] = value.fields.經度Longitude;
+                   data.push(items);
+                   console.log(items);
+            }); // end .each
+    }); // end getJSON
+  </script>
+
+  <script>
+    function show_districts(){
+
+      for (var i in data) {
+          var latlng = L.latLng({ lat: data[i].latitud, lng: data[i].longitud });
+          L.marker( latlng )
+              .bindPopup( '<a href="' + data[i].url + '" target="_blank">' + '<img src="' + data[i].image_url+'" width = "80px"><br>'+data[i].name + '</a>' )
+              .addTo(map);
+      }
+
+    }
+
+  </script>
+
+  <script src='scriptlib2.js'></script>
+</body>
+</html>
+</html>
