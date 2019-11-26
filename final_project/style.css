@@ -1,0 +1,19 @@
+html {
+    scroll-behavior: smooth;
+  }
+
+body {
+background-color: rgba(189, 185, 185, 0.226);
+}
+.image p .btn {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 10px;
+    font-size: 0.8em;
+  }
+  .image p .btn:hover {
+    color: rgb(91, 115, 255);
+    border-color: rgb(89, 189, 255);
+  }
+
