@@ -7,12 +7,11 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <!--map--> 
+        <!--map-->
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
         integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-        crossorigin=""/>
-        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin="">
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
         crossorigin=""></script>
     </head>
     
@@ -21,7 +20,7 @@
         <!--external-->
         <script src="scrolltop.js"></script>
         <link rel="stylesheet" href="style.css">
-        <div class="navbar navbar-default navbar-fixed-top">
+        <div class="navbar navbar-default navbar-fixed-top navbar-inverse">
             <div class="container" id="nav">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
@@ -41,19 +40,19 @@
                         <li class="active">
                             <a href="#mainpage">主頁</a>
                         </li>
-                        <li>
+                        <li class="">
                             <a href="#movies">影片收錄</a>
                         </li>
-                        <li>
+                        <li class="">
                             <a href="#spots">拍攝場地</a>
                         </li>
                         <li class="">
                             <a href="#recommendation">個性推薦</a>
                         </li>
-                        <li>
+                        <li class="">
                             <a href="#map">地圖分佈</a>
                         </li>
-                        <li>
+                        <li class="">
                             <a href="#aboutus">關於我們</a>
                         </li>
                     </ul>
@@ -68,19 +67,105 @@
                         <h1 class="text-inverse">香港電影旅行指南</h1>
                         <p class="text-center text-inverse">帶你探索那些隱藏在街頭巷尾的拍攝場地</p>
                         <br>
-                        <a class="btn btn-primary" contenteditable="true" id="checkbtn" href="#movies">發現</a>
+                        <a class="btn btn-primary" id="checkbtn" href="#movies">發現</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="section">
+        <div class="section" style="background:#FCFCFC">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12" id="movies">
-                        <h3 contenteditable="true" class="text-center">-影片收錄-</h3>
-                        <h5 class="text-center" contenteditable="true">
-                            <i>收錄多類型經典香港電影</i>
+                    <div class="col-md-9">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe allowfullscreen="" width="713" height="401" src="https://www.youtube.com/embed/Jh8dU_Se170"
+                            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                        </div>
+                    </div>
+                    <div class="col-md-3" style="background: #272727">
+                        <h3 class="text-center" style="color: #E0E0E0;">-香港電影朝聖-</h3>&lt;
+                        <h5 class="text-justify" style="color:#E0E0E0">
+                            <br>
+                            <br>
+                            <br>《HK電影朝聖》的宗旨是希望從電影場景
+                            <br>
+                            <br>的角度去發掘這座城市獨特的面貌、
+                            <br>
+                            <br>文化與記憶，&nbsp;
+                            <br>
+                            <br>
+                            <br>
+                            <br>相反也可從這些有意思的景點去認識和重
+                            <br>
+                            <br>視屬於這地方的電影，重視一些被人忽略
+                            <br>
+                            <br>甚至是輕視的瑰寶。&nbsp;
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
                         </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section" style="background:#FCFCFC">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="text-center" contenteditable="true">-場景專欄-</h3>
+                        <h5 class="text-center text-warning">
+                            <i style="color:darkred">點擊閱讀電影與場景的故事</i>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section" style="background:#FCFCFC">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src="甜蜜蜜的尖沙咀.jpg" class="img-responsive img-rounded">
+                        <h3 class="text-center">《甜蜜蜜》的尖沙咀</h3>
+                        <p>若要在九十年代的香港電影中選一些最具時代性的作品，陳可辛的《甜蜜蜜》無疑是當中的必然之選。繼續閱讀 →</p>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="大排檔.jpg" class="img-responsive img-rounded">
+                        <h3 class="text-center">大牌檔与《諜影行動》</h3>
+                        <p>場景可以消失，但當中曾存在過發生過的，都是不會被消失的記憶，那是最要珍惜的在地生活文化和情懷。電影經常無心插柳地成了記錄城市的載體。 繼續閱讀
+                            →</p>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="益丰大厦.jpg" class="img-responsive img-rounded">
+                        <h3>益豐大廈 不簡單的延伸</h3>
+                        <p>若要選香港近年風頭最勁的電影場景，毫無疑問是鰂魚涌英皇道的「怪獸大廈」2014年的《變形金剛4》樓群成了柯柏文與狂派大打出手的場景， 繼續閱讀
+                            →</p>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="甘露甜品.jpg" class="img-responsive img-rounded">
+                        <h3 contenteditable="true">甘露甜品 舊社區的人情</h3>
+                        <p>早前籌備電影場景團，聚焦點在土瓜灣，一個位於市區但自成一國的老社區。講開土瓜灣的鄰里關係，不得不提這間小店，從《大時代》開始。 繼續閱讀 →</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="movies" style="background: lightgrey">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center" id="movies">
+                        <h3 class="text-center">
+                            <b>-影片收錄-</b>
+                        </h3>
+                        <h5 class="text-center" contenteditable="true">收錄多類型經典香港電影</h5>
+                        <h5 class="text-center text-warning">
+                            <i style="color:darkred">Feel free to use the filter tool (筛选菜单) at the top</i>
+                        </h5>
+                        <a class="btn btn-default btn-sm" href="#types">類型分類</a>
                         <div class="section" id="movies">
                             <div class="container">
                                 <iframe class="airtable-embed" src="https://airtable.com/embed/shrLFsoiwNEWu41RV?backgroundColor=purple&amp;viewControls=on"
@@ -91,110 +176,280 @@
                 </div>
             </div>
         </div>
-        <div class="section" id="spots">
+        <div class="section text-center" id="types" style="background:#FCFCFC">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h3 class="text-center">-拍攝場地-</h3>
-                        <h5 class="text-center">
-                            <i>獲取電影拍攝地訊息</i>
-                        </h5>
-                        <div class="section" id="movies">
-                            <iframe class="airtable-embed" src="https://airtable.com/embed/shrX33NtljtaKa2iZ?backgroundColor=purple&amp;viewControls=on"
-                            frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
-                        </div>
+                        <h3 class="text-center">-收錄類型-</h3>
+                    </div>
+                </div>
+                <div class="dataTables_wrapper no-footer" id="table2_wrapper">
+                    <div class="dataTables_length" id="table2_length">
+                        <label>Show
+                            <select name="table2_length" aria-controls="table2" class="">
+                                <option value="10">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>entries</label>
+                    </div>
+                    <div class="dataTables_filter" id="table2_filter">
+                        <label>Search:
+                            <input type="search" class="" placeholder="" aria-controls="table2">
+                        </label>
+                    </div>
+                    <table id="table2" width="100%" class="table table-bordered dataTable no-footer"
+                    role="grid" aria-describedby="table2_info" style="width: 100%;">
+                        <thead>
+                            <tr role="row">
+                                <th class="sorting_asc" tabindex="0" aria-controls="table2" rowspan="1"
+                                colspan="1" aria-sort="ascending" aria-label="Product: activate to sort column descending"
+                                style="width: 181px;">影片類型</th>
+                                <th class="sorting" tabindex="0" aria-controls="table2" rowspan="1"
+                                colspan="1" aria-label="Total Amount: activate to sort column ascending"
+                                style="width: 259px;">收錄數量</th>
+                                <th class="sorting" tabindex="0" aria-controls="table2" rowspan="1"
+                                colspan="1" aria-label="Total Amount: activate to sort column ascending"
+                                style="width: 259px;">影片名稱</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr role="row" class="odd">
+                                <td class="sorting_1">剧情</td>
+                                <td>16</td>
+                                <td>風中有朵雨做的雲、志明與春嬌、過春天、甜蜜蜜、喜劇之王、一念無明、色，戒、 胭脂扣、阿飛正傳、怒火街頭、得閒炒飯、神经侠侣、機動部隊PTU、
+                                    29+1、翠絲Tracey、玻璃之城</td>
+                            </tr>
+                            <tr role="row" class="even">
+                                <td class="sorting_1">动作、科幻</td>
+                                <td>2</td>
+                                <td>變形金剛4:絕跡重生、 攻殼機動隊</td>
+                            </tr>
+                            <tr role="row" class="odd">
+                                <td class="sorting_1">喜剧</td>
+                                <td>6</td>
+                                <td contenteditable="true">喜劇之王、月满轩尼诗、盲探、神经侠侣、港囧、金枝玉叶</td>
+                            </tr>
+                            <tr role="row" class="even">
+                                <td class="sorting_1">犯罪</td>
+                                <td>7</td>
+                                <td contenteditable="true">無間道、 風中有朵雨做的雲、 攻殼機動隊、 阿飛正傳、 怒火街頭、 盲探、 機動部隊PTU</td>
+                            </tr>
+                            <tr role="row" class="odd">
+                                <td class="sorting_1">愛情</td>
+                                <td>16</td>
+                                <td contenteditable="true">重慶森林、 志明與春嬌、 甜蜜蜜、 喜劇之王、 色，戒、 胭脂扣、 阿飛正傳、 怒火街頭、 月满轩尼诗、 得閒炒飯、 盲探、 春嬌救志明、
+                                    29+1、 星月童話、 玻璃之城、 金枝玉叶</td>
+                            </tr>
+                            <tr role="row" class="even">
+                                <td class="sorting_1">懸疑</td>
+                                <td>4</td>
+                                <td contenteditable="true">無間道、 風中有朵雨做的雲、 盲探、 S.C.I謎案集</td>
+                            </tr>
+                            <tr role="row" class="odd">
+                                <td class="sorting_1">情色</td>
+                                <td>1</td>
+                                <td contenteditable="true">色，戒</td>
+                            </tr>
+                            <tr role="row" class="even">
+                                <td class="sorting_1">奇幻</td>
+                                <td>1</td>
+                                <td contenteditable="true">胭脂扣Rouge</td>
+                            </tr>
+                            <tr role="row" class="odd">
+                                <td class="sorting_1">同性</td>
+                                <td>2</td>
+                                <td contenteditable="true">得閒炒飯All about Love 翠絲Tracey</td>
+                            </tr>
+                            <tr role="row" class="even">
+                                <td class="sorting_1">驚悚</td>
+                                <td>1</td>
+                                <td contenteditable="true">S.C.I謎案集</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="dataTables_info" id="table2_info" role="status" aria-live="polite">Showing 1 to 3 of 3 entries</div>
+                    <div class="dataTables_paginate paging_simple_numbers"
+                    id="table2_paginate">
+                        <a class="paginate_button previous disabled" aria-controls="table2" data-dt-idx="0"
+                        tabindex="0" id="table2_previous">Previous</a>
+                        <span>
+                            <a class="paginate_button current" aria-controls="table2" data-dt-idx="1"
+                            tabindex="0">1</a>
+                        </span>
+                        <a class="paginate_button next disabled" aria-controls="table2" data-dt-idx="2"
+                        tabindex="0" id="table2_next">Next</a>
                     </div>
                 </div>
             </div>
-            <div class="section" id="recommendation">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h3 class="text-center">-個性推薦-</h3>
-                            <h4 class="text-center"></h4>
-                            <h4 class="text-center">&nbsp;</h4>
-                            <h4 class="text-center">&nbsp; &nbsp;電影 × “ Who You Are ”</h4>
-                            <h4 class="text-center">&nbsp; &nbsp;</h4>
-                        </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="text-center" id="spots">-拍攝場地-</h3>
+                    <h5 class="text-center">獲取電影拍攝地訊息</h5>
+                    <h5 class="text-center text-muted">
+                        <i style="color:darkred">Feel free to use the filter tool (筛选菜单) at the top</i>
+                    </h5>
+                    <div class="section" id="movies">
+                        <iframe class="airtable-embed" src="https://airtable.com/embed/shrX33NtljtaKa2iZ?backgroundColor=purple&amp;viewControls=on"
+                        frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="recommendation" style="background: #E0E0E0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="text-center">-個性推薦-</h3>
                         <h4 class="text-center"></h4>
+                        <h4 class="text-center">&nbsp; &nbsp;電影 × “ Who You Are ”</h4>
+                        <h5 class="text-center" style="color:darkred">
+                            <i>&nbsp;點擊“出發”查看個性化線路推薦</i>
+                        </h5>
+                        <h4 class="text-center">&nbsp; &nbsp;</h4>
                     </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <img src="chihuo.png" class="center-block img-circle img-responsive">
-                            <h3 class="text-center">電影×吃貨</h3>
-                            <h4 class="text-center">帶你發現電影中的美味餐廳</h4>
-                            <h4 class="text-center"></h4>
-                            <div class="col-md-12 text-center">
-                                <a class="btn btn-primary" id="ch" contenteditable="true" href="chihuo">出發</a>
-                            </div>
-                            <h4 class="text-center" contenteditable="true"></h4>
+                    <h4 class="text-center"></h4>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="chihuo.png" class="center-block img-circle img-responsive">
+                        <h3 class="text-center">電影×吃貨</h3>
+                        <h4 class="text-center">帶你發現電影中的美味餐廳</h4>
+                        <h4 class="text-center"></h4>
+                        <div class="col-md-12 text-center">
+                            <a class="btn btn-primary" id="ch" contenteditable="true" href="chihuo">出發</a>
                         </div>
-                        <div class="col-md-4">
-                            <img src="wanka.png" class="center-block img-circle img-responsive">
-                            <h3 class="text-center">電影×玩咖</h3>
-                            <h4 class="text-center">帶你打卡電影中的有趣景點</h4>
-                            <div class="col-md-12 text-center">
-                                <a class="btn btn-primary" id="wk" href="wanka">出發</a>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <img src="wenqing.png" class="center-block img-circle img-responsive">
-                            <h3 class="text-center">電影×文青</h3>
-                            <h4 class="text-center">帶你探尋電影中的文藝情調</h4>
-                            <div class="col-md-12 text-center">
-                                <a class="btn btn-primary" id="wq" href="wenqing">出發</a>
-                            </div>
-                            <p class="text-center"></p>
+                        <h4 class="text-center" contenteditable="true"></h4>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="wanka.png" class="center-block img-circle img-responsive">
+                        <h3 class="text-center">電影×玩咖</h3>
+                        <h4 class="text-center">帶你打卡電影中的有趣景點</h4>
+                        <div class="col-md-12 text-center">
+                            <a class="btn btn-primary" id="wk" href="wanka">出發</a>
                         </div>
                     </div>
-                </div>
-                <div class="section" id="chihuo" style="display: none;">
-                    <div class="container">
-                        <iframe class="airtable-embed" src="https://airtable.com/embed/shrsDDp2xGjYdTNKS?backgroundColor=gray&amp;viewControls=on"
-                        frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
-                    </div>
-                </div>
-                <div class="section" id="wanka" style="display: none;">
-                    <div class="container">
-                        <iframe class="airtable-embed" src="https://airtable.com/embed/shrjAmOa1LdHdPSFp?backgroundColor=gray&amp;viewControls=on"
-                        frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
-                    </div>
-                </div>
-                <div class="section" id="wenqing" style="display: none;">
-                    <div class="container">
-                        <iframe class="airtable-embed" src="https://airtable.com/embed/shrC9SUQQgiTHe31X?backgroundColor=gray&amp;viewControls=on"
-                        frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+                    <div class="col-md-4">
+                        <img src="wenqing.png" class="center-block img-circle img-responsive">
+                        <h3 class="text-center">電影×文青</h3>
+                        <h4 class="text-center">帶你探尋電影中的文藝情調</h4>
+                        <div class="col-md-12 text-center">
+                            <a class="btn btn-primary" id="wq" href="wenqing">出發</a>
+                        </div>
+                        <p class="text-center"></p>
                     </div>
                 </div>
             </div>
-            <div class="section" id="map">
+            <div class="section" id="chihuo" style="display: none;">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 text-center">
-                            <h4 class="text-center">&nbsp;</h4>
-                        </div>
+                    <iframe class="airtable-embed" src="https://airtable.com/embed/shrsDDp2xGjYdTNKS?backgroundColor=gray&amp;viewControls=on"
+                    frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+                </div>
+            </div>
+            <div class="section" id="wanka" style="display: none;">
+                <div class="container">
+                    <iframe class="airtable-embed" src="https://airtable.com/embed/shrjAmOa1LdHdPSFp?backgroundColor=gray&amp;viewControls=on"
+                    frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+                </div>
+            </div>
+            <div class="section" id="wenqing" style="display: none;">
+                <div class="container">
+                    <iframe class="airtable-embed" src="https://airtable.com/embed/shrC9SUQQgiTHe31X?backgroundColor=gray&amp;viewControls=on"
+                    frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="map">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h4 class="text-center">&nbsp;</h4>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-11">
-                                        <div class="col-lg-12 text-center">
-                                            <h3 class="section-heading text-uppercase">-地圖分佈-</h3>
-                                            <h4 class="section-subheading text-muted">點擊 按區域查看地點分佈</h4>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-lg-12 text-center">
+                                        <h3 class="section-heading text-center text-uppercase">-地圖分佈-</h3>
+                                        <h5 class="section-subheading text-muted" style="color:darkred">
+                                            <i>點擊按鈕 按區域查看地點分佈</i>
+                                        </h5>
+                                    </div>
+                                    <div id="button" align="center">
+                                        <button type="button" style="font-size:20px; height:50px; width:100;"
+                                        class="btn btn-primary btn-lg" onclick="show_districts1();">Hong Kong Island</button>
+                                        <button type="button" style="font-size:20px; height:50px; width:100;"
+                                        class="btn btn-danger btn-lg" onclick="show_districts2();">Kowloon</button>
+                                        <button type="button" style="font-size:20px; height:50px; width:100;background: #0071d8;"
+                                        class="btn btn-success btn-lg" onclick="show_districts3();">New Territories</button>
+                                    </div>
+                                </div>
+                                <br>
+                                <div id="map" style="width: 650px; height: 480px; border: 1px solid rgb(170, 170, 170); margin-left: auto; margin-right: auto; position: relative;"
+                                class="leaflet-container leaflet-touch leaflet-retina leaflet-safari leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom"
+                                tabindex="0">
+                                    <button type="button" class="btn btn-info" onclick="clear_markers();">Clear Markers</button>
+                                    <div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);">
+                                        <div class="leaflet-pane leaflet-tile-pane">
+                                            <div class="leaflet-layer " style="z-index: 1; opacity: 1;">
+                                                <div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 17; transform: translate3d(-434px, -407px, 0px) scale(2);"></div>
+                                                <div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 18; transform: translate3d(-434px, -407px, 0px) scale(1);">
+                                                    <img alt="" role="presentation" src="https://a.tile.openstreetmap.org/12/3346/1787.png"
+                                                    class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(492px, 460px, 0px); opacity: 1;">
+                                                    <img alt="" role="presentation" src="https://b.tile.openstreetmap.org/12/3347/1787.png"
+                                                    class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(748px, 460px, 0px); opacity: 1;">
+                                                    <img alt="" role="presentation" src="https://c.tile.openstreetmap.org/12/3346/1786.png"
+                                                    class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(492px, 204px, 0px); opacity: 1;">
+                                                    <img alt="" role="presentation" src="https://a.tile.openstreetmap.org/12/3347/1786.png"
+                                                    class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(748px, 204px, 0px); opacity: 1;">
+                                                    <img alt="" role="presentation" src="https://b.tile.openstreetmap.org/12/3346/1788.png"
+                                                    class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(492px, 716px, 0px); opacity: 1;">
+                                                    <img alt="" role="presentation" src="https://c.tile.openstreetmap.org/12/3347/1788.png"
+                                                    class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(748px, 716px, 0px); opacity: 1;">
+                                                    <img alt="" role="presentation" src="https://c.tile.openstreetmap.org/12/3345/1787.png"
+                                                    class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(236px, 460px, 0px); opacity: 1;">
+                                                    <img alt="" role="presentation" src="https://c.tile.openstreetmap.org/12/3348/1787.png"
+                                                    class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1004px, 460px, 0px); opacity: 1;">
+                                                    <img alt="" role="presentation" src="https://b.tile.openstreetmap.org/12/3345/1786.png"
+                                                    class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(236px, 204px, 0px); opacity: 1;">
+                                                    <img alt="" role="presentation" src="https://b.tile.openstreetmap.org/12/3348/1786.png"
+                                                    class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1004px, 204px, 0px); opacity: 1;">
+                                                    <img alt="" role="presentation" src="https://a.tile.openstreetmap.org/12/3345/1788.png"
+                                                    class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(236px, 716px, 0px); opacity: 1;">
+                                                    <img alt="" role="presentation" src="https://a.tile.openstreetmap.org/12/3348/1788.png"
+                                                    class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1004px, 716px, 0px); opacity: 1;">
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div id="button" align="center">
-                                            <button type="button" style="font-size:20px; height:50px; width:100;"
-                                            class="btn btn-primary btn-lg" onclick="show_districts1();">Hong Kong Island</button>
-                                            <button type="button" style="font-size:20px; height:50px; width:100;"
-                                            class="btn btn-danger btn-lg" onclick="show_districts2();">Kowloon</button>
-                                            <button type="button" style="font-size:20px; height:50px; width:100;background: #0071d8;"
-                                            class="btn btn-success btn-lg" onclick="show_districts3();">New Territories</button>
+                                        <div class="leaflet-pane leaflet-shadow-pane"></div>
+                                        <div class="leaflet-pane leaflet-overlay-pane"></div>
+                                        <div class="leaflet-pane leaflet-marker-pane"></div>
+                                        <div class="leaflet-pane leaflet-tooltip-pane"></div>
+                                        <div class="leaflet-pane leaflet-popup-pane"></div>
+                                        <div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(856842px, 457657.921875px, 0px) scale(2048);"></div>
+                                    </div>
+                                    <div class="leaflet-control-container">
+                                        <div class="leaflet-top leaflet-left">
+                                            <div class="leaflet-control-zoom leaflet-bar leaflet-control">
+                                                <a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button"
+                                                aria-label="Zoom in">+</a>
+                                                <a class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button"
+                                                aria-label="Zoom out">−</a>
+                                            </div>
+                                        </div>
+                                        <div class="leaflet-top leaflet-right"></div>
+                                        <div class="leaflet-bottom leaflet-left"></div>
+                                        <div class="leaflet-bottom leaflet-right">
+                                            <div class="leaflet-control-attribution leaflet-control">
+                                                <a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>| Map data ©
+                                                <a href="https://openstreetmap.org">OpenStreetMap</a>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div id="mapid"></div>
-                                    <img src="http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png"
-                                    class="img-responsive img-thumbnail">
                                 </div>
                             </div>
                         </div>
@@ -202,7 +457,54 @@
                 </div>
             </div>
         </div>
-        <footer class="section" id="aboutus">
+        <div class="section" style="background: #E0E0E0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h3 class="text-center" contenteditable="true">-新增收錄-</h3>
+                        <h5 class="section-subheading text-muted" style="color:darkred">
+                            <i>登陸錄入最新電影/場景</i>
+                        </h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <div class="col-sm-2">
+                                    <label for="inputEmail3" class="control-label">Email</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-2">
+                                    <label for="inputPassword3" class="control-label">Password</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox">Remember me</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-default">Sign in</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="section" id="aboutus" style="background: lightgrey">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 text-center col-md-12">
