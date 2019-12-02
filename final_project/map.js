@@ -79,7 +79,7 @@ var datajl = [];
 $.getJSON(airtable_read_endpoint, function(result) {
        $.each(result.records, function(key,value) {
         map2_jl = {};
-        map2_jl["name"] = value.拍攝場地FilmingSite;
+        map2_jl["name"] = value.fields.拍攝場地FilmingSite;
         map2_jl["url"] = value.fields.url;
         map2_jl["image_url"] = value.fields.PicURL;
         map2_jl["latitud"] = value.fields.緯度Latitude;
@@ -100,17 +100,17 @@ function show_districts2(){
 
 //新界
 var map_xj = [];
-var airtable_read_endpoint = "https://api.airtable.com/v0/appGyicFYWqWwNvwL/%E6%96%B0%E7%95%8C?api_key=keyMKBpzuSeqRV0SV";
+var airtable_read_endpoint = "https://api.airtable.com/v0/appu5yU2yNyYArUOD/%E6%96%B0%E7%95%8C?api_key=keymD6h94v04C3JPF";
 
 var dataxj = [];
 $.getJSON(airtable_read_endpoint, function(result) {
        $.each(result.records, function(key,value) {
            map_xj = {};
-           map_xj["name"] = value.fields.新界;
-           map_xj["image_url"] = value.fields.img_url;
-           map_xj["latitud"] = value.fields.lat;
-           map_xj["longitud"] = value.fields.ling;
-           map_xj["inout"] = value.fields.室內外;
+           map_xj["name"] = value.fields.拍攝場地FilmingSite;
+           map_xj["url"] = value.fields.url;
+           map_xj["image_url"] = value.fields.PicURL;
+           map_xj["latitud"] = value.fields.緯度Latitude;
+           map_xj["longitud"] = value.fields.經度Longitude;
                dataxj.push(map_xj);
                console.log(map_xj);
         }); // end .each
