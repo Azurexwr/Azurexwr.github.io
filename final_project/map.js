@@ -125,12 +125,3 @@ function show_districts3(){
   }
 }
 
-
-function show_districts6(){
-  for (var i in datacf) {
-      var latlng = L.latLng({ lat: datacf[i].latitud, lng: datacf[i].longitud });
-      L.marker( latlng, {icon: threepi})
-          .bindPopup( '<a href="' + datacf[i].url + '" target="_blank">' +datacf[i].name + datacf[i].inout + '</a>' )
-          .addTo(layerGroup);
-  }
-}
