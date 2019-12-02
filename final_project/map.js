@@ -9,54 +9,54 @@ layerGroup = L.layerGroup().addTo(map);
 
       // create custom icon
 var xgdi = L.icon({
-iconUrl: 'pic/icon.png',
+iconUrl: 'icon.png',
 iconSize: [30, 40], // size of the icon
 popupAnchor: [0,-15]
 });
 
 var jli = L.icon({
-iconUrl: 'pic/icon1.png',
+iconUrl: 'icon1.png',
 iconSize: [30, 40], // size of the icon
 popupAnchor: [0,-15]
 });
 
 var xji = L.icon({
-iconUrl: 'pic/icon2.png',
+iconUrl: 'icon2.png',
 iconSize: [30, 40], // size of the icon
 popupAnchor: [0,-15]
 });
 
 var fivepi = L.icon({
-iconUrl: 'pic/icon5.png',
+iconUrl: 'picon5.png',
 iconSize: [30, 40], // size of the icon
 popupAnchor: [0,-15]
 });
 
 var fourpi = L.icon({
-iconUrl: 'pic/icon4.png',
+iconUrl: 'icon4.png',
 iconSize: [30, 40], // size of the icon
 popupAnchor: [0,-15]
 });
 
 var threepi = L.icon({
-iconUrl: 'pic/icon3.png',
+iconUrl: 'icon3.png',
 iconSize: [30, 40], // size of the icon
 popupAnchor: [0,-15]
 });
 
 //香港岛
 var items = [];
-var airtable_read_endpoint = "https://api.airtable.com/v0/appGyicFYWqWwNvwL/%E9%A6%99%E6%B8%AF%E5%B3%B6?api_key=keyMKBpzuSeqRV0SV";
+var airtable_read_endpoint = "https://api.airtable.com/v0/appu5yU2yNyYArUOD/%E9%A6%99%E6%B8%AF%E5%B3%B6?api_key=keymD6h94v04C3JPF";
 
 var data = [];
 $.getJSON(airtable_read_endpoint, function(result) {
        $.each(result.records, function(key,value) {
            items = {};
-               items["name"] = value.fields.香港島;
-               items["image_url"] = value.fields.img_url;
-               items["latitud"] = value.fields.lat;
-               items["longitud"] = value.fields.ling;
-               items["inout"] = value.fields.室內外;
+               items["name"] = value.fields.拍攝場地FilmingSite;
+                   items["url"] = value.fields.url;
+                   items["image_url"] = value.fields.PicURL;
+                   items["latitud"] = value.fields.緯度Latitude;
+                   items["longitud"] = value.fields.經度Longitude;
                data.push(items);
                console.log(items);
         }); // end .each
@@ -73,17 +73,17 @@ function show_districts1(){
 
 //九龙
 var map2_jl = [];
-var airtable_read_endpoint = "https://api.airtable.com/v0/appGyicFYWqWwNvwL/%E4%B9%9D%E9%BE%8D?api_key=keyMKBpzuSeqRV0SV";
+var airtable_read_endpoint = "https://api.airtable.com/v0/appu5yU2yNyYArUOD/%E4%B9%9D%E9%BE%8D?api_key=keymD6h94v04C3JPF";
 
 var datajl = [];
 $.getJSON(airtable_read_endpoint, function(result) {
        $.each(result.records, function(key,value) {
         map2_jl = {};
-        map2_jl["name"] = value.fields.Name;
-        map2_jl["image_url"] = value.fields.img_url;
-        map2_jl["latitud"] = value.fields.lat;
-        map2_jl["longitud"] = value.fields.ling;
-        map2_jl["inout"] = value.fields.室內外;
+        map2_jl["name"] = value.拍攝場地FilmingSite;
+        map2_jl["url"] = value.fields.url;
+        map2_jl["image_url"] = value.fields.PicURL;
+        map2_jl["latitud"] = value.fields.緯度Latitude;
+        map2_jl["longitud"] = value.fields.經度Longitude;   
         datajl.push(map2_jl);
                console.log(map2_jl);
         }); // end .each
@@ -124,4 +124,5 @@ function show_districts3(){
           .addTo(layerGroup);
   }
 }
+
 
