@@ -16,7 +16,7 @@
             function modal_handle(Film, Release_Date, Douban_Rating, Filming_Site, Scene_Time,Character, poster_url) {
                          $("h3.modal-title").html(`${Film}`);
                          $(".modal-body").html(`<img src="${poster_url}"
-                             class="img-responsive"><p>上映時間：${Release_Date}<br />豆瓣評分：${Douban_Rating}<br />場景人物：${Character}<br />拍攝場地：${Filming_Site}<br />場景時刻：${Scene_Time}<br /></p>`);
+                             class="img-responsive"><p>上映時間：${Release_Date}<br />豆瓣評分：${Douban_Rating}<br />場景人物：${Character}<br />拍攝場地：${Filming_Site}<br />圖片：${poster_url}<br />場景時刻：${Scene_Time}<br /></p>`);
                          $('#popup-photo').modal('show');
              } // end modal_handle function
 
