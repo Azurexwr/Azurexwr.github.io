@@ -4,21 +4,19 @@
 ############# Flask Modules Setup ##############
 from flask import Flask, render_template, request, make_response, jsonify
 from flask_login import LoginManager, login_user, logout_user, login_required, UserMixin
-from flask_cors import CORS
 
 import MySQLdb
 
 ######### Initialize Flask App ##########
 
 app = Flask(__name__)
-CORS(app)
 
 ######### MySQL Database Setup ##########
 
-connection = MySQLdb.connect(host="localhost",
-                     user="root",
-                     passwd="root",
-                     db="comm5940",
+connection = MySQLdb.connect(host="AzureXu.mysql.pythonanywhere-services.com",
+                     user="AzureXu",
+                     passwd="HongKong123",
+                     db="AzureXu$HK_Location",
                      charset='utf8mb4')
 
 ######### Login Manager Setup ##########
@@ -55,7 +53,7 @@ def query_auth():
     password = request.args.get("password")
     if username == "1155136921@link.cuhk.edu.hk" and password == "xwr123":
         login_user(User(1))
-        message = "Dear " + username + ", welcome to PENSOO's pages. Your login has been granted."
+        message = "Dear " + username + ", welcome to HK電影朝聖 . Your login has been granted."
         return make_response(message, 200, )
     else:
         message = 'Wrong password!'
@@ -67,7 +65,7 @@ def form_auth():
     password = request.form['pwd']
     if username == "1155136921@link.cuhk.edu.hk" and password == "xwr123":
         login_user(User(1))
-        message = "Dear " + username + ", welcome to PENSOO's pages. Your login has been granted."
+        message = "Dear " + username + ", welcome to HK電影朝聖. Your login has been granted."
         return render_template('home.html', message=message)
     else:
         message = 'Wrong password!'
@@ -95,7 +93,7 @@ def album():
         dataset.append(dict.copy()) #markers.append(fld.copy())
     cursor.close()
     connection.close()
-    return render_template('product-web.html',dataset=dataset)
+    return render_template('product2.html',dataset=dataset)
 
 @app.route('/logout/')
 @login_required
@@ -115,9 +113,9 @@ def internal_error(error):
 def api_auth():
     username = request.json['username']
     password = request.json['password']
-    if username == "115513691@link.cuhk.edu.hk" and password == "xwr123":
+    if username == "1155136921@link.cuhk.edu.hk" and password == "xwr123":
         login_user(User(1))
-        message = "Dear " + username + ", welcome to PENSOO's pages. Your login has been granted."
+        message = "Dear " + username + ", welcome to HK電影朝聖. Your login has been granted."
         return jsonify({'response':'ok!','message':message})
     else:
         message = 'Wrong password!'
@@ -147,7 +145,7 @@ def api_album():
     connection.close()
     return jsonify({'Album': dataset})
 
-######### Run Flask Web App at Port 9030 ##########    
+######### Run Flask Web App at Port 9030 ##########
 
 if __name__ == '__main__':
     from werkzeug.serving import run_simple
