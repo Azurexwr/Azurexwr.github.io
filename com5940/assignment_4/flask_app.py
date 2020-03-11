@@ -1,6 +1,3 @@
-!pip install PyMySQL
-!pip install flask_login
-!pip install flask_cors
 ############# Flask Modules Setup ##############
 from flask import Flask, render_template, request, make_response, jsonify
 from flask_login import LoginManager, login_user, logout_user, login_required, UserMixin
@@ -13,11 +10,11 @@ app = Flask(__name__)
 
 ######### MySQL Database Setup ##########
 
-connection = MySQLdb.connect(host="AzureXu.mysql.pythonanywhere-services.com",
-                     user="AzureXu",
-                     passwd="HongKong123",
-                     db="AzureXu$HK_Location",
-                     charset='utf8mb4')
+#connection = MySQLdb.connect(host="AzureXu.mysql.pythonanywhere-services.com",
+#                     user="AzureXu",
+#                     passwd="HongKong123",
+#                     db="AzureXu$HK_Location",
+#                     charset='utf8mb4')
 
 ######### Login Manager Setup ##########
 
@@ -83,17 +80,17 @@ def album():
     dict={}
     for i in final_result:
         dict['Film'] = i[0]
-        dict['Release_Date'] = i[1]
-        dict['Douban_Rating'] = i[2]
-        dict['Filming_Site'] = i[3]
-        dict['Scene_Time'] = i[4]
-        dict['Character'] = i[5]
-        dict['Scene_Plot'] = i[6]
-        dict['poster_url'] = i[7]
+        dict['Release_Date'] = i[2]
+        dict['Douban_Rating'] = i[5]
+        dict['Filming_Site'] = i[6]
+        dict['Scene_Time'] = i[7]
+        dict['Character'] = i[8]
+        dict['Scene_Plot'] = i[9]
+        dict['poster_url'] = i[4]
         dataset.append(dict.copy()) #markers.append(fld.copy())
     cursor.close()
     connection.close()
-    return render_template('product2.html',dataset=dataset)
+    return render_template('product-web.html',dataset=dataset)
 
 @app.route('/logout/')
 @login_required
@@ -133,13 +130,13 @@ def api_album():
     dict={}
     for i in final_result:
         dict['Film'] = i[0]
-        dict['Release_Date'] = i[1]
-        dict['Douban_Rating'] = i[2]
-        dict['Filming_Site'] = i[3]
-        dict['Scene_Time'] = i[4]
-        dict['Character'] = i[5]
-        dict['Scene_Plot'] = i[6]
-        dict['poster_url'] = i[7]
+        dict['Release_Date'] = i[2]
+        dict['Douban_Rating'] = i[5]
+        dict['Filming_Site'] = i[6]
+        dict['Scene_Time'] = i[7]
+        dict['Character'] = i[8]
+        dict['Scene_Plot'] = i[9]
+        dict['poster_url'] = i[4]
         dataset.append(dict.copy()) #markers.append(fld.copy())
     cursor.close()
     connection.close()
