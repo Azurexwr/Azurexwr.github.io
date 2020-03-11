@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+   {% for item in dataset %}
+        {% if loop.index == 1 %}{% set counter = ( counter | default(1) ) %}{% endif %}
+        {% if counter == 1 %}<div class="row">{% endif %}
+          <div class="col-md-4">
+            <div class="thumbnail" style="height: 510px">
+                <img height="auto" width="auto" src="{{ item['poster_url'] }}"
+                class="img-responsive">
+                <div style=" margin-left: 10px; margin-right: 10px;height: 230px;">
+                <h3>{{ item['Film'] }}</h3>
+                 <p>發行時間:{{ item['Release_Date'] }}<br>豆瓣評分：{{ item['Douban_Rating'] }}<br>拍攝地點：{{ item['Filming_Site'] }}<br>場景人物：{{ item['Character'] }}<br>場景劇情：{{ item['Scene_Plot'] }</p>
+                </div>
+                 <div style="text-align: center; margin-bottom: 5px;">
+                    <button type="button" class="button  arrow" >View</button>
+                  </div>
+            </div>
+          </div>
+       {% if counter == 3 %}</div><!--end row-->{%  set counter = ( counter | default(1) ) %}{% else %}{% set counter = ( counter | default(0) ) + 1 %}{% endif %}
+      {% endfor %}
+</div>
+{% endblock %}
