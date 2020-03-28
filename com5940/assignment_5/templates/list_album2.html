@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Assign5</title>
+  <title>Assignment5</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}"> 
@@ -56,10 +56,10 @@
                             <a href="/">主頁</a> 
                         </li>
                         <li>
-                            <a href="/album/1">取景地（卡片頁）</a>
+                            <a href="/album/1">場景圖</a>
                         </li>
                         <li>
-                            <a href="/list_album">取景地（列表頁）</a>
+                            <a href="/list_album">取景地列表</a>
                         </li>
                     </ul> 
                     <ul class="nav navbar-nav navbar-right">
@@ -80,9 +80,7 @@
                 <tr>
                   <th>No.</th>
                   <th>影片</th>
-                  <th>發行年份</th>
                   <th>海報</th>
-                  <th>豆瓣評分</th>
                   <th>拍攝場地</th>
                   <th>場景時間</th> 
                   <th>場景人物</th>  
@@ -92,15 +90,13 @@
               <tbody>
                  {% for row in entries  %}
                     <tr>
-                      <td>{{ row["ID"] }}</td>
-                      <td>{{ row["Film"] }}</td>
-                      <td>{{ row["Release_Date"] }}</td> 
-                      <td>{{ row["poster_url"] }}</td>
-                      <td>{{ row["Douban_Rating"] }}</td>
-                      <td>{{ row["Filming_Site"] }}</td>
-                      <td>{{ row["Scene_Time"] }}</td>
-                      <td>{{ row["Character"] }}</td>
-                      <td>{{ row["Scene_Plot"] }}</td>
+                      <td>{{ row["id"] }}</td>
+                      <td>{{ row["Films"] }}</td>
+                      <td>{{ row["poster"] }}</td> 
+                      <td>{{ row["locations"] }}</td>
+                      <td>{{ row["scenetime"] }}</td>
+                      <td>{{ row["characters"] }}</td>
+                      <td>{{ row["sceneplot"] }}</td>
                     </tr>
                   {% endfor %}
                   </tbody>
@@ -120,52 +116,60 @@
                          <form role="form" method="post" action="/add_film">
                              <div class="form-group">
                                   <div class="col-sm-4">
-                                    <label for="name">影片</label>
+                                    <label for="id">ID</label>
                                   </div>
                                   <div class="col-sm-8">
-                                    <input type="text" name="name" id="add_name" class="form-control" placeholder="Name" required>
+                                    <input type="text" name="id" id="add_id" class="form-control" placeholder="id" required>
                                   </div>
                               </div>
                               <div class="form-group">
                                   <div class="col-sm-4">
-                                    <label for="poster">海報</label>
+                                    <label for="Films">影片</label>
                                   </div>
                                   <div class="col-sm-8">
-                                    <input type="text" name="poster" id="add_poster" class="form-control" placeholder="Name" required>
+                                    <input type="text" name="Films" id="add_Films" class="form-control" placeholder="Films" required>
                                   </div>
                               </div>
                              <div class="form-group">
                                   <div class="col-sm-4">
-                                    <label for="cast">演职员</label>
+                                    <label for="poster">海報</label>
                                   </div>
                                   <div class="col-sm-8">
-                                    <input type="text" name="cast" id="add_cast" class="form-control" placeholder="Cast" required>
+                                    <input type="text" name="poster" id="add_poster" class="form-control" placeholder="poster" required>
                                   </div>
                               </div>
                               <div class="form-group">
                                   <div class="col-sm-4">
-                                    <label for="types">类型</label>
+                                    <label for="locations">取景地</label>
                                   </div>
                                   <div class="col-sm-8">
-                                    <input type="text" name="types" id="add_types" class="form-control" placeholder="Types" required>
+                                    <input type="text" name="locations" id="add_locations" class="form-control" placeholder="locations" required>
                                   </div>
                               </div>
                               <div class="form-group">
                                   <div class="col-sm-4">
-                                    <label for="date">上映日期</label>
+                                    <label for="scenetime">場景時間</label>
                                   </div>
                                   <div class="col-sm-8">
-                                    <input type="text" name="date" id="add_date" class="form-control" placeholder="Date" required>
+                                    <input type="text" name="scenetime" id="add_scenetime" class="form-control" placeholder="scenetime" required>
                                   </div>
                               </div>
                                <div class="form-group">
                                   <div class="col-sm-4">
-                                    <label for="rating">评分</label>
+                                    <label for="characters">場景人物</label>
                                   </div>
                                   <div class="col-sm-8">
-                                    <input type="number" name="rating" id="add_rating" class="form-control" placeholder="Rating" step="1" min="1" max="5" required>
+                                    <input type="text" name="characters" id="add_characters" class="form-control" placeholder="characters" step="1" min="1" max="5" required>
                                   </div>
                               </div>
+                              <div class="form-group">
+                                <div class="col-sm-4">
+                                  <label for="sceneplot">場景劇情</label>
+                                </div>
+                                <div class="col-sm-8">
+                                  <input type="text" name="sceneplot" id="add_sceneplot" class="form-control" placeholder="sceneplot" step="1" min="1" max="5" required>
+                                </div>
+                            </div>
                              <!--input type="hidden" name="record_id" id="add_record_id" class="form-control"-->
                              <button type="submit" class="mt-3 btn btn-primary">提交</button>
                         </form>       
@@ -190,64 +194,63 @@
                       </div>
                       <div class="modal-body">
                         <!-- modal form -->
-                        
                          <form role="form" method="post" action="/update_film">
                               <div class="form-group">
                                   <div class="col-sm-4">
-                                      <label for="ID">No.</label>
+                                      <label for="id">No.</label>
                                   </div>
                                   <div class="col-sm-8">
-                                      <input type="number" name="ID" id="upd_ID" class="form-control" placeholder="ID" disabled>
+                                      <input type="number" name="id" id="upd_id" class="form-control" placeholder="id" disabled>
                                   </div>
                               </div>
                              <div class="form-group">
                                   <div class="col-sm-4">
-                                      <label for="name">剧名</label>
+                                      <label for="Films">影片</label>
                                   </div>
                                   <div class="col-sm-8">
-                                      <input type="text" name="name" id="upd_name" class="form-control" placeholder="Name" required autofocus>
+                                      <input type="text" name="Films" id="upd_Films" class="form-control" placeholder="Films" required autofocus>
                                   </div>
                               </div>
                               <div class="form-group">
                                   <div class="col-sm-4">
-                                    <label for="poster">海报url</label>
+                                    <label for="poster">海報</label>
                                   </div>
                                   <div class="col-sm-8">
-                                    <input type="text" name="poster" id="upd_poster" class="form-control" placeholder="URL" required>
+                                    <input type="text" name="poster" id="upd_poster" class="form-control" placeholder="poster" required>
                                   </div>
                               </div>
                              <div class="form-group">
                                   <div class="col-sm-4">
-                                    <label for="cast">演职员</label>
+                                    <label for="locations">取景地</label>
                                   </div>
                                   <div class="col-sm-8">
-                                    <input type="text" name="cast" id="upd_cast" class="form-control" placeholder="Cast" required>
+                                    <input type="text" name="locations" id="upd_locations" class="form-control" placeholder="locations" required>
                                   </div>
                               </div>
                               <div class="form-group">
-                                  <div class="col-sm-4">
-                                    <label for="types">类型</label>
-                                  </div>
-                                  <div class="col-sm-8">
-                                    <input type="text" name="types" id="upd_types" class="form-control" placeholder="Types" required>
-                                  </div>
+                                <div class="col-sm-4">
+                                  <label for="scenetime">場景時間</label>
+                                </div>
+                                <div class="col-sm-8">
+                                  <input type="text" name="scenetime" id="add_scenetime" class="form-control" placeholder="scenetime" required>
+                                </div>
+                            </div>
+                             <div class="form-group">
+                                <div class="col-sm-4">
+                                  <label for="characters">場景人物</label>
+                                </div>
+                                <div class="col-sm-8">
+                                  <input type="text" name="characters" id="add_characters" class="form-control" placeholder="characters" step="1" min="1" max="5" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="col-sm-4">
+                                <label for="sceneplot">場景劇情</label>
                               </div>
-                              <div class="form-group">
-                                  <div class="col-sm-4">
-                                    <label for="date">上映日期</label>
-                                  </div>
-                                  <div class="col-sm-8">
-                                    <input type="text" name="date" id="upd_date" class="form-control" placeholder="Date" required>
-                                  </div>
+                              <div class="col-sm-8">
+                                <input type="text" name="sceneplot" id="add_sceneplot" class="form-control" placeholder="sceneplot" step="1" min="1" max="5" required>
                               </div>
-                              <div class="form-group">
-                                  <div class="col-sm-4">
-                                    <label for="rating">评分</label>
-                                  </div>
-                                  <div class="col-sm-8">
-                                    <input type="number" name="rating" id="upd_rating" class="form-control" placeholder="Rating" step="1.0" min="0" max="5" required>
-                                  </div>
-                              </div>
+                          </div>
                              <input type="hidden" name="record_id" id="upd_record_id" class="form-control"-->
                              <button type="submit" class="mt-3 btn btn-primary">提交</button>
                         </form>       
@@ -271,66 +274,66 @@
                       </div>
                       <div class="modal-body">
                         <!-- modal form -->
-                        <form method="post" action="/delete_film">
+                        <form role="form" method="post" action="/update_film">
                           <div class="form-group">
-                                  <div class="col-sm-4">
-                                      <label for="ID">No.</label>
-                                  </div>
-                                  <div class="col-sm-8">
-                                      <input type="number" name="ID" id="del_ID" class="form-control" placeholder="ID" disabled>
-                                  </div>
+                              <div class="col-sm-4">
+                                  <label for="id">No.</label>
                               </div>
-                            <div class="form-group">
-                                  <div class="col-sm-4">
-                                      <label for="name">剧名</label>
-                                  </div>
-                                  <div class="col-sm-8">
-                                      <input type="text" name="name" id="del_name" class="form-control" placeholder="Name" disabled>
-                                  </div>
+                              <div class="col-sm-8">
+                                  <input type="number" name="id" id="upd_id" class="form-control" placeholder="id" disabled>
                               </div>
-                              <div class="form-group">
-                                  <div class="col-sm-4">
-                                    <label for="cast">演职员</label>
-                                  </div>
-                                  <div class="col-sm-8">
-                                    <input type="text" name="cast" id="del_cast" class="form-control" placeholder="Cast" disabled>
-                                  </div>
+                          </div>
+                         <div class="form-group">
+                              <div class="col-sm-4">
+                                  <label for="Films">影片</label>
                               </div>
-                            <div class="form-group">
-                                  <div class="col-sm-4">
-                                    <label for="poster">海报url</label>
-                                  </div>
-                                  <div class="col-sm-8">
-                                    <input type="text" name="poster" id="del_poster" class="form-control" placeholder="URL" disabled>
-                                  </div>
+                              <div class="col-sm-8">
+                                  <input type="text" name="Films" id="upd_Films" class="form-control" placeholder="Films" required autofocus>
                               </div>
-                              <div class="form-group">
-                                  <div class="col-sm-4">
-                                    <label for="types">类型</label>
-                                  </div>
-                                  <div class="col-sm-8">
-                                    <input type="text" name="types" id="del_types" class="form-control" placeholder="Types" disabled>
-                                  </div>
+                          </div>
+                          <div class="form-group">
+                              <div class="col-sm-4">
+                                <label for="poster">海報</label>
                               </div>
-                              <div class="form-group">
-                                  <div class="col-sm-4">
-                                    <label for="date">上映日期</label>
-                                  </div>
-                                  <div class="col-sm-8">
-                                    <input type="text" name="date" id="del_date" class="form-control" placeholder="Date" disabled>
-                                  </div>
+                              <div class="col-sm-8">
+                                <input type="text" name="poster" id="upd_poster" class="form-control" placeholder="poster" required>
                               </div>
-                              <div class="form-group">
-                                  <div class="col-sm-4">
-                                    <label for="rating">評分</label>
-                                  </div>
-                                  <div class="col-sm-8">
-                                    <input type="number" name="rating" id="del_rating" class="form-control" placeholder="Rating" disabled>
-                                  </div>
+                          </div>
+                         <div class="form-group">
+                              <div class="col-sm-4">
+                                <label for="locations">取景地</label>
                               </div>
-                          <input type="hidden" name="record_id" id="del_record_id" class="form-control">
-                          <button type="submit" class="mt-3 btn btn-primary">提交</button>
-                        </form>
+                              <div class="col-sm-8">
+                                <input type="text" name="locations" id="upd_locations" class="form-control" placeholder="locations" required>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-sm-4">
+                              <label for="scenetime">場景時間</label>
+                            </div>
+                            <div class="col-sm-8">
+                              <input type="text" name="scenetime" id="add_scenetime" class="form-control" placeholder="scenetime" required>
+                            </div>
+                        </div>
+                         <div class="form-group">
+                            <div class="col-sm-4">
+                              <label for="characters">場景人物</label>
+                            </div>
+                            <div class="col-sm-8">
+                              <input type="text" name="characters" id="add_characters" class="form-control" placeholder="characters" step="1" min="1" max="5" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="col-sm-4">
+                            <label for="sceneplot">場景劇情</label>
+                          </div>
+                          <div class="col-sm-8">
+                            <input type="text" name="sceneplot" id="add_sceneplot" class="form-control" placeholder="sceneplot" step="1" min="1" max="5" required>
+                          </div>
+                      </div>
+                         <input type="hidden" name="record_id" id="upd_record_id" class="form-control"-->
+                         <button type="submit" class="mt-3 btn btn-primary">提交</button>
+                    </form>       
                         <!-- end modal form -->
                       </div><!-- end modal body -->
                       <div class="modal-footer">

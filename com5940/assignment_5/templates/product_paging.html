@@ -1,21 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
 
-  {% for product in products.items %}
+  {% for nopic in locations_in_HK.items %}
        {% if loop.index == 1 %}{% set counter = ( counter | default(1) ) %}{% endif %}
         {% if counter == 1 %}<div class="row">{% endif %}
         <div class="col-md-4">
-          <div class="thumbnail">
-              <p>Col#:{{ loop.index }}<br>Product ID:{{ product.productID }}<br>Product Code:{{ product.productCode }}<br>Product NAME:{{ product.name }}<br>Quantity:{{ product.quantity }}<br>Price:{{ product.price }}<br>Supplier ID:{{ product.supplierID }}</p>
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                </div>
-          </div>
+          <div class="card mb-4 shadow-sm">
+              <img width="100%" height="200px" src="{{nopic.poster}}" style="object-fit:cover">
+              <div class="card-body">
+              <p>編號:{{nopic.id}}<br>影片:{{nopic.Films}}<br>海報:{{nopic.poster}}<br>拍攝地點:{{nopic.locations}}<br>場景時刻:{{nopic.scenetime}}<br>場景人物:{{nopic.characters}}<br>場景劇情:{{nopic.sceneplot}}</p>
+              </div>
+              </div>
         </div> 
        {% if counter == 3 %}</div><!--end row-->{%  set counter = ( counter | default(1) ) %}{% else %}{% set counter = ( counter | default(0) ) + 1 %}{% endif %}
   {% endfor %}
   <div class="container" style="float: left;">
-  {% for page in products.iter_pages() %}  
+  {% for page in locations_in_HK.iter_pages() %}  
     {% if page %}
         <a href="{{url_for('album')}}/{{ page }}">{{ page }}</a>
     {% else %}
